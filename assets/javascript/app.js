@@ -11,44 +11,84 @@
 
 
 
-// var button = document.getElementsByClassName("btn btn-warning");
-// var questions = document.getElementsByClassName("questions");
+var questionsArray = [
+    
+    {
 
+    q1:"What 1988 comedy,sci-fi film starring Rowdy Roddy Piper and Sandahl Bergman is set in a dystopian future where mutated lizard-like amphibians live on desolate reservations, and women search for scarce virile men in order to multiply and start a new human society?",
+    answers: {
+        1:"Rango",
+        2:"Hell Comes to Frogtown",
+        3:"Anaconda"
+        },
+        correctAnswer:"2"
+    },
+
+    {
+    q2:"What visually stunning movie directed by Michael Mann and starring Ian Mckellen (Magneto), takes place inside of a Citadel in WWII era Romania wherein lies a trapped demonic entity named Radu Molasar?",
+    answers: {
+        1:"X-men",
+        2:"Heat",
+        3:"The Keep"
+        },
+        correctAnswer:"3"
+    },
+
+    {
+    q3:"What 1977 action-revenge movie starring Tommy Lee Jones is set post-Vietnam War, about a former POW with a hook for a hand exacting revenge on the gang that murdered his family?",
+    answers: {
+        1:"Operation Rolling Thunder",
+        2:"Man of the House",
+        3:"Men in Black II"
+        },
+        correctAnswer:"1"
+    },
+
+];
+
+var questions = document.getElementsByClassName(".questionDiv");
+var submitButton = document.getElementsByClassName(".btn btn-warning");
+var scoreDiv = document.getElementsByClassName(".score");
 
 
 var counter = 0;
-
-
 
 // $("#timer"). function timer(counter) {
     
 // }
     
-        button.onclick = function(){
+        // button.onclick = function(){
 
                    
-            if(counter >= 0){
-                setTimeout(function(){
-                $("#timer").text(counter)               
+        //     if(counter >= 0){
+        //         setTimeout(function(){
+        //         $("#timer").text(counter)               
 
-                timer();
+        //         timer();
 
 
-            }, 1000)
+        //     }, 1000)
 
-             counter--;
-            }
-            else{
-                $("#timer").text(counter);
-                alert("Game over, man!!!");
-            }
+        //      counter--;
+        //     }
+        //     else{
+        //         $("#timer").text(counter);
+        //         alert("Game over, man!!!");
+        //     }
            
-        };
+        // };
 
-        timer();
+        // timer();
 
 
+function Quiz() {}
 
+function showScore() {}
+
+Quiz();
+
+submitButton.onClick(showScore);
+console.log("test");
 
 // Ladies and Gentlemen, this is... just horrible. Words can't express what we're all feeling at this very moment. A great champion has fallen. We'll be back right after these important messages.
 // You have... death around you.
