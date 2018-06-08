@@ -15,7 +15,7 @@ var questionsArray = [
     
     {
 
-    q1:"What 1988 comedy,sci-fi film starring Rowdy Roddy Piper and Sandahl Bergman is set in a dystopian future where mutated lizard-like amphibians live on desolate reservations, and women search for scarce virile men in order to multiply and start a new human society?",
+    question:"What 1988 comedy,sci-fi film starring Rowdy Roddy Piper and Sandahl Bergman is set in a dystopian future where mutated lizard-like amphibians live on desolate reservations, and women search for scarce virile men in order to multiply and start a new human society?",
     answers: {
         1:"Rango",
         2:"Hell Comes to Frogtown",
@@ -25,7 +25,7 @@ var questionsArray = [
     },
 
     {
-    q2:"What visually stunning movie directed by Michael Mann and starring Ian Mckellen (Magneto), takes place inside of a Citadel in WWII era Romania wherein lies a trapped demonic entity named Radu Molasar?",
+    question:"What visually stunning movie directed by Michael Mann and starring Ian Mckellen (Magneto), takes place inside of a Citadel in WWII era Romania wherein lies a trapped demonic entity named Radu Molasar?",
     answers: {
         1:"X-men",
         2:"Heat",
@@ -35,7 +35,7 @@ var questionsArray = [
     },
 
     {
-    q3:"What 1977 action-revenge movie starring Tommy Lee Jones is set post-Vietnam War, about a former POW with a hook for a hand exacting revenge on the gang that murdered his family?",
+    question:"What 1977 action-revenge movie starring Tommy Lee Jones is set post-Vietnam War, about a former POW with a hook for a hand exacting revenge on the gang that murdered his family?",
     answers: {
         1:"Operation Rolling Thunder",
         2:"Man of the House",
@@ -81,7 +81,34 @@ var counter = 0;
         // timer();
 
 
-function Quiz() {}
+function Quiz() {
+
+    var output =[];
+
+    questionsArray.forEach(
+        (currentQuestion, questionNumber) => {
+            var answers = [];
+            for(letter in currentQuestion.answers){
+
+                answers.push(
+                  `<label>
+                    <input type="radio" name="question${questionNumber}" value="${letter}">
+                    ${letter} :
+                    ${currentQuestion.answers[letter]}
+                  </label>`
+                );
+              }
+
+            output.push(
+                `<div class="question"> ${currentQuestion.question} </div>
+                <div class="answers"> ${answers.join('')} </div>`
+              );
+        }
+    );
+
+    quizContainer.innerHTML = output.join('');
+
+}
 
 function showScore() {}
 
